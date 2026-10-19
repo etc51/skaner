@@ -17,8 +17,14 @@ info() { echo "info: $*"; echo "info: $*" >> "$OUT/result.txt"; }
 shot() { STEP=$((STEP+1)); adb exec-out screencap -p > "$OUT/$(printf %02d $STEP)-$1.png"; }
 
 dump() {
-  adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
-  adb pull /sdcard/ui.xml /tmp/ui.xml >/dev/null 2>&1 || echo "" > /tmp/ui.xml
+  # uiautomator иногда отдаёт пустой снимок, пока экран анимируется: пробуем до трёх раз.
+  for _ in 1 2 3; do
+    adb shell rm -f /sdcard/ui.xml >/dev/null 2>&1
+    adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
+    adb pull /sdcard/ui.xml /tmp/ui.xml >/dev/null 2>&1 || echo "" > /tmp/ui.xml
+    grep -q "<node" /tmp/ui.xml && return 0
+    sleep 1
+  done
 }
 # Координаты центра элемента. Режим: text (точно), desc (content-desc содержит), id (resource-id содержит), textin (text содержит).
 find_xy() {
@@ -104,7 +110,7 @@ pick_photo() {
       adb shell input swipe $xy $xy 1200; sleep 2
       dump; cp /tmp/ui.xml "$OUT/picker-after-tap.xml"
       # В режиме выбора нескольких файлов нажатие только отмечает файл, дальше нужна кнопка «Выбрать».
-      tap textin "Select" 3 || tap desc "Select" 3 || tap id "action_menu_select" 3 || tap textin "Open" 3 || tap desc "Open" 3 || tap textin "Done" 3 || true
+      tap desc "Open" 3 || tap text "OPEN" 3 || tap text "SELECT" 3 || tap text "Select" 3 || tap id "action_menu_select" 3 || tap textin "Done" 3 || true
       return 0
     fi
     # «Недавние» пустые (Android 10 не индексирует push по broadcast): ищем файл поиском окна «Файлы».
@@ -236,7 +242,7 @@ adb shell input keyevent 4; sleep 2
 [ $DEBUG = 1 ] && { n=$(app_ls cache/export | grep -c '\.jpg$'); [ "$n" = 2 ] && ok "2 JPG подготовлены" || fail "JPG подготовлено: $n"; }
 
 log "8. Сохранение PDF в «Файлы»"
-tap_text "Поделиться" 2; tap_text "Сохранить PDF в файлы" 5 || fail "нет пункта сохранения"
+tap_text "Поделиться" 2; has_text "Сохранить PDF в файлы" || adb shell input swipe $((W/2)) $((H*85/100)) $((W/2)) $((H*40/100)) 400; tap_text "Сохранить PDF в файлы" 5 || fail "нет пункта сохранения"
 shot sohranit
 tap textin "SAVE" 2 || tap textin "Save" 2 || tap textin "Сохранить" 2 || tap id "action_menu_save" 2 || info "кнопка сохранения в «Файлах» не найдена"
 sleep 6
