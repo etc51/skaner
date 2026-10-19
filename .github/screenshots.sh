@@ -29,4 +29,5 @@ adb shell cmd uimode night yes
 shot home 5-temnaya
 shot doc:demo1 6-temnaya-dokument
 adb shell cmd uimode night no
+adb logcat -d -b crash > screenshots/crash.txt || true
 ls -la screenshots

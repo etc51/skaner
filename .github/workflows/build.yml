@@ -79,7 +79,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: screenshots/*.png
+          path: screenshots/*
 
       - name: Сохранить скриншоты в ветку checks/screenshots
         run: |

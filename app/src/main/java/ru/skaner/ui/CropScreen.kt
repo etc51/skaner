@@ -138,7 +138,7 @@ fun CropScreen(docId: String, pageId: String, isNew: Boolean, actions: Actions, 
                 DarkAction(Icons.Outlined.CropFree, "Весь кадр") {
                     data?.let { quad = Quad.full(it.sourceWidth.toFloat(), it.sourceHeight.toFloat()) }
                 }
-                DarkAction(Icons.Outlined.AutoFixHigh, "Найти края") {
+                DarkAction(Icons.Outlined.AutoFixHigh, "Авто") {
                     val d = data ?: return@DarkAction
                     actions.work("Ищу края листа…") {
                         val found = withContext(Dispatchers.IO) { Scanner.detect(context, docId, d.page) }
