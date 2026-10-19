@@ -50,6 +50,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -253,7 +255,7 @@ fun DocumentScreen(docId: String, actions: Actions, startAtEnd: Boolean, onBack:
 
     if (shareSheet) {
         ModalBottomSheet(onDismissRequest = { shareSheet = false }, containerColor = MaterialTheme.colorScheme.surfaceContainerLow) {
-            Column(Modifier.padding(start = 20.dp, end = 20.dp, bottom = 32.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(Modifier.verticalScroll(rememberScrollState()).padding(start = 20.dp, end = 20.dp, bottom = 32.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(doc.name, style = MaterialTheme.typography.titleLarge, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text(pagesLabel(doc.pages.size), color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.height(4.dp))
@@ -281,7 +283,7 @@ fun DocumentScreen(docId: String, actions: Actions, startAtEnd: Boolean, onBack:
 
     if (addSheet) {
         ModalBottomSheet(onDismissRequest = { addSheet = false }, containerColor = MaterialTheme.colorScheme.surfaceContainerLow) {
-            Column(Modifier.padding(start = 20.dp, end = 20.dp, bottom = 32.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(Modifier.verticalScroll(rememberScrollState()).padding(start = 20.dp, end = 20.dp, bottom = 32.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text("Добавить страницу", style = MaterialTheme.typography.titleLarge)
                 Spacer(Modifier.height(4.dp))
                 SheetOption(Icons.Outlined.AddAPhoto, "Снять камерой", "Края листа найдутся сами") {

@@ -134,7 +134,7 @@ if pick_photo "list1"; then
 else
   fail "не удалось выбрать фото в системном окне"
   if [ $DEBUG = 1 ]; then
-    adb shell am broadcast -n $PKG/ru.skaner.debug.DemoDataReceiver -a ru.skaner.debug.IMPORT --es path /sdcard/Pictures/list1.jpg >/dev/null; sleep 15
+    adb push .github/test-photos/list1.jpg /data/local/tmp/list1.jpg >/dev/null; adb shell chmod 644 /data/local/tmp/list1.jpg; adb shell run-as $PKG sh -c "'mkdir -p files && cp /data/local/tmp/list1.jpg files/in.jpg'"; adb shell am broadcast -n $PKG/ru.skaner.debug.DemoDataReceiver -a ru.skaner.debug.IMPORT --es path files/in.jpg >/dev/null; sleep 15
     start doc:imported
   fi
 fi

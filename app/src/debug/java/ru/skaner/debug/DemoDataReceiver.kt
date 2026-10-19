@@ -61,7 +61,8 @@ class DemoDataReceiver : BroadcastReceiver() {
     private fun importFile(context: Context, path: String) {
         val docs = Docs.get(context)
         val f = File(context.cacheDir, "import.jpg")
-        File(path).copyTo(f, overwrite = true)
+        val src = if (path.startsWith("/")) File(path) else File(context.filesDir.parentFile, path)
+        src.copyTo(f, overwrite = true)
         val page = Scanner.importPage(context, Uri.fromFile(f), "imported")
         Scanner.render(context, "imported", page)
         val now = System.currentTimeMillis()
