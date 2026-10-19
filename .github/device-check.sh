@@ -84,7 +84,8 @@ sleep 3
 pick_photo() {
   local want="$1"
   sleep 3
-  for attempt in 1 2 3; do
+  for attempt in 1 2 3 4 5 6; do
+    dismiss_anr
     dump
     cp /tmp/ui.xml "$OUT/picker-$attempt.xml"
     # Новый выбор фото (Android 11+): плитки с описанием «Photo taken on…».
@@ -96,17 +97,22 @@ pick_photo() {
     fi
     # Старое окно «Файлы» (Android 7–10): ищем файл по имени, при необходимости открываем меню.
     if [ -n "$(find_xy textin "$want")" ]; then
-      xy=$(find_xy textin "$want"); adb shell input tap $xy; sleep 2
-      tap textin "Select" 2 || tap textin "Open" 2 || tap textin "Done" 2 || true
+      xy=$(find_xy textin "$want"); adb shell input tap $xy; sleep 3
+      in_app && return 0
+      dump; cp /tmp/ui.xml "$OUT/picker-after-tap.xml"
+      # В режиме выбора нескольких файлов нажатие только отмечает файл, дальше нужна кнопка «Выбрать».
+      tap textin "Select" 3 || tap desc "Select" 3 || tap id "action_menu_select" 3 || tap textin "Open" 3 || tap desc "Open" 3 || tap textin "Done" 3 || true
       return 0
     fi
-    tap textin "Pictures" 2 || tap textin "Images" 2 || tap desc "Show roots" 2 || tap textin "Recent" 2 || sleep 2
+    # «Недавние» бывают пустыми: открываем боковое меню, раздел «Изображения», папку Pictures.
+    tap textin "Pictures" 3 || tap text "Images" 3 || tap desc "Show roots" 3 || tap desc "Navigate up" 3 || sleep 2
   done
   return 1
 }
 
 log "1. Пустой экран"
 start home
+sleep 3; dismiss_anr
 shot pusto
 has_text "Сканируйте документы" && ok "пустой экран с подсказкой" || fail "нет подсказки на пустом экране"
 has desc "Из галереи" && ok "кнопка галереи есть" || fail "нет кнопки галереи"

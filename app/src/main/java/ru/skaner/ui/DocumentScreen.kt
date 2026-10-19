@@ -83,7 +83,7 @@ import ru.skaner.scan.Scanner
 /** Документ: страницы листаются, под ними фильтры и действия со страницей. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DocumentScreen(docId: String, actions: Actions, onBack: () -> Unit, onEditCorners: (String) -> Unit) {
+fun DocumentScreen(docId: String, actions: Actions, startAtEnd: Boolean, onBack: () -> Unit, onEditCorners: (String) -> Unit) {
     val context = LocalContext.current
     val docs = remember { Docs.get(context) }
     val doc = rememberDocs<Doc?>(null, docId) { it.get(docId) } ?: return
@@ -91,7 +91,8 @@ fun DocumentScreen(docId: String, actions: Actions, onBack: () -> Unit, onEditCo
         LaunchedEffect(Unit) { onBack() }
         return
     }
-    val pager = rememberPagerState { doc.pages.size }
+    // После добавления страницы открываем её, а не первую.
+    val pager = rememberPagerState(initialPage = if (startAtEnd) doc.pages.lastIndex else 0) { doc.pages.size }
     val scope = rememberCoroutineScope()
     val index = pager.currentPage.coerceIn(0, doc.pages.lastIndex)
     val page = doc.pages[index]

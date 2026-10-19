@@ -132,7 +132,7 @@ class MainActivity : ComponentActivity() {
                     if (uris.size > 1) pages.forEach { Scanner.render(applicationContext, docId, it) }
                 }
             }
-            route = if (uris.size == 1) "crop:${doc.id}:${doc.pages.last().id}:new" else "doc:${doc.id}"
+            route = if (uris.size == 1) "crop:${doc.id}:${doc.pages.last().id}:new" else "doc:${doc.id}:last"
         }
     }
 
@@ -171,11 +171,11 @@ private fun App(route: String, busy: String?, onRoute: (String) -> Unit, actions
         when {
             screen == "doc" && id != null -> {
                 BackHandler { onRoute("home") }
-                DocumentScreen(id, actions, onBack = { onRoute("home") }, onEditCorners = { onRoute("crop:$id:$it:edit") })
+                DocumentScreen(id, actions, startAtEnd = parts.getOrNull(2) == "last", onBack = { onRoute("home") }, onEditCorners = { onRoute("crop:$id:$it:edit") })
             }
             screen == "crop" && id != null && parts.size >= 4 -> {
                 val isNew = parts[3] == "new"
-                CropScreen(id, parts[2], isNew, actions, onDone = { onRoute("doc:$id") }, onCancel = { docLeft ->
+                CropScreen(id, parts[2], isNew, actions, onDone = { onRoute(if (isNew) "doc:$id:last" else "doc:$id") }, onCancel = { docLeft ->
                     onRoute(if (docLeft) "doc:$id" else "home")
                 })
             }

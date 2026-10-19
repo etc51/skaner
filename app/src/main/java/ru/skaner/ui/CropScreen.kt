@@ -130,22 +130,23 @@ fun CropScreen(docId: String, pageId: String, isNew: Boolean, actions: Actions, 
                     CornerEditor(d, q) { quad = it }
                 }
             }
-            Row(
-                Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 16.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            // Две строки, чтобы и на узком экране кнопки не сжимались.
+            Column(
+                Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
-                DarkAction(Icons.Outlined.CropFree, "Весь кадр") {
-                    data?.let { quad = Quad.full(it.sourceWidth.toFloat(), it.sourceHeight.toFloat()) }
-                }
-                DarkAction(Icons.Outlined.AutoFixHigh, "Авто") {
-                    val d = data ?: return@DarkAction
-                    actions.work("Ищу края листа…") {
-                        val found = withContext(Dispatchers.IO) { Scanner.detect(context, docId, d.page) }
-                        quad = found ?: Quad.full(d.sourceWidth.toFloat(), d.sourceHeight.toFloat())
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)) {
+                    DarkAction(Icons.Outlined.CropFree, "Весь кадр") {
+                        data?.let { quad = Quad.full(it.sourceWidth.toFloat(), it.sourceHeight.toFloat()) }
+                    }
+                    DarkAction(Icons.Outlined.AutoFixHigh, "Авто") {
+                        val d = data ?: return@DarkAction
+                        actions.work("Ищу края листа…") {
+                            val found = withContext(Dispatchers.IO) { Scanner.detect(context, docId, d.page) }
+                            quad = found ?: Quad.full(d.sourceWidth.toFloat(), d.sourceHeight.toFloat())
+                        }
                     }
                 }
-                Spacer(Modifier.weight(1f))
                 Surface(
                     onClick = {
                         val d = data ?: return@Surface
@@ -162,9 +163,11 @@ fun CropScreen(docId: String, pageId: String, isNew: Boolean, actions: Actions, 
                     },
                     shape = CircleShape,
                     color = Color.Transparent,
+                    modifier = Modifier.fillMaxWidth(),
                 ) {
                     Row(
-                        Modifier.background(BrandGradient).padding(horizontal = 24.dp, vertical = 14.dp),
+                        Modifier.background(BrandGradient).padding(vertical = 16.dp),
+                        horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Icon(Icons.Outlined.Check, null, tint = Color.White)
