@@ -165,7 +165,9 @@ object Scanner {
     fun decode(context: Context, uri: Uri, maxSide: Int): Bitmap? {
         val resolver = context.contentResolver
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        resolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, bounds) } ?: return null
+        // С inJustDecodeBounds декодер всегда возвращает null, размер приходит в bounds.
+        resolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, bounds) }
+        if (bounds.outWidth <= 0 || bounds.outHeight <= 0) return null
         val orientation = resolver.openInputStream(uri)?.use { exifRotation(it) } ?: 0
         val bitmap = resolver.openInputStream(uri)?.use {
             BitmapFactory.decodeStream(it, null, sampled(bounds, maxSide))
