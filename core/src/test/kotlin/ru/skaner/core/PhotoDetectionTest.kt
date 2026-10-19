@@ -38,4 +38,13 @@ class PhotoDetectionTest {
     @Test fun lightBackground() = check("photo2", tolerance = 45f)
 
     @Test fun sheetCutByFrame() = check("photo3")
+
+    // Листы с настоящим текстом, печатью и таблицей, как в демо-данных для скриншотов.
+    @Test fun textOnWood() = check("demo0")
+
+    @Test fun textRotatedOnDesk() = check("demo1")
+
+    @Test fun textStraight() = check("demo2")
+
+    @Test fun textWithTable() = check("demo3")
 }

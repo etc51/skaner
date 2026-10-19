@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="icon_background">#3B4EF5</color>
+    <color name="window_light">#F5F6FB</color>
+    <color name="window_dark">#0E1016</color>
+</resources>

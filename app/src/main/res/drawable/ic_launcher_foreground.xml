@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Лист с загнутым углом в рамке видоискателя. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Уголки рамки -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M30,40 V34 a4,4 0 0 1 4,-4 H40 M68,30 H74 a4,4 0 0 1 4,4 V40 M78,68 V74 a4,4 0 0 1 -4,4 H68 M40,78 H34 a4,4 0 0 1 -4,-4 V68" />
+    <!-- Лист -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,37 H60 L68,45 V69 a2,2 0 0 1 -2,2 H42 a2,2 0 0 1 -2,-2 V39 a2,2 0 0 1 2,-2 Z" />
+    <path
+        android:fillColor="#C9CEFF"
+        android:pathData="M60,37 V43 a2,2 0 0 0 2,2 H68 Z" />
+    <!-- Строки -->
+    <path
+        android:strokeColor="#5B6CFF"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:pathData="M45,51 H63 M45,57 H63 M45,63 H56" />
+</vector>
