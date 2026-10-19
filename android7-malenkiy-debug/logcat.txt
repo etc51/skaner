@@ -1,0 +1,202 @@
+10-19 14:00:06.098  1645  1671 I PackageManager: Package doesn't exist in get block uninstall io.github.etc51.skaner
+10-19 14:00:06.108  1645  1671 W PackageManager: Not removing non-existent package io.github.etc51.skaner
+10-19 14:00:06.828  1645  1671 I PackageManager.DexOptimizer: Running dexopt (dex2oat) on: /data/app/vmdl63562000.tmp/base.apk pkg=io.github.etc51.skaner isa=x86_64 vmSafeMode=false debuggable=true target-filter=interpret-only oatDir = /data/app/vmdl63562000.tmp/oat sharedLibraries=null
+10-19 14:00:35.172  1772  4017 W GCM     : Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package:io.github.etc51.skaner flg=0x4000010 cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-19 14:00:35.174  1772  4018 W GCM     : Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package:io.github.etc51.skaner flg=0x4000010 cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-19 14:00:35.213  2365  4044 I ChromeSync: [Sync,SyncIntentOperation] Handling the intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package:io.github.etc51.skaner flg=0x4000010 cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }.
+10-19 14:00:35.214  2365  3747 I FontLog : Package io.github.etc51.skaner has no metadata [CONTEXT service_id=132 ]
+10-19 14:00:35.289  2365  4044 I ChromeSync: [Persistence,AffiliationManager] One of affiliation or grouping data for android://ysFTyyl1_OIo_6TEsYgUSKwyo_M2yvzy4uWJBIK4feG9sC6e2Z1hm5Et1Vk7bPjsUWoYm4P7z0qh_-dC9gjYTw==@io.github.etc51.skaner/ was not found. Marking affiliation data as stale...
+10-19 14:00:35.460  2226  4062 I UpdateIcingCorporaServi: Updating corpora: APPS=io.github.etc51.skaner, CONTACTS=MAYBE
+10-19 14:00:40.023  1645  2114 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:00:40.045  1645  3040 I ActivityManager: Start proc 4182:io.github.etc51.skaner/u0a78 for activity io.github.etc51.skaner/ru.skaner.ui.MainActivity
+10-19 14:00:41.171  1645  1666 I ActivityManager: Displayed io.github.etc51.skaner/ru.skaner.ui.MainActivity: +1s140ms
+10-19 14:00:41.189  1645  1666 I WindowManager: Destroying surface Surface(name=Starting io.github.etc51.skaner) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:00:46.144  4182  4227 D ProfileInstaller: Installing profile for io.github.etc51.skaner
+10-19 14:00:54.158  1645  3041 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.AppWindowToken.notifyAppStopped:389 com.android.server.wm.WindowManagerService.notifyAppStopped:4463 com.android.server.am.ActivityStack.activityStoppedLocked:1252 com.android.server.am.ActivityManagerService.activityStopped:6903 
+10-19 14:02:29.038  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:02:29.043  4306  4917 W DocumentsActivity: Failed to restore stack for package: io.github.etc51.skaner because of error: java.io.FileNotFoundException: Failed to find matching root for null
+10-19 14:02:29.405  1645  2324 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.AppWindowToken.notifyAppStopped:389 com.android.server.wm.WindowManagerService.notifyAppStopped:4463 com.android.server.am.ActivityStack.activityStoppedLocked:1252 com.android.server.am.ActivityManagerService.activityStopped:6903 
+10-19 14:03:20.587  1645  2048 I ActivityManager: START u0 {act=android.intent.action.CHOOSER flg=0x1 cmp=android/com.android.internal.app.ChooserActivity clip={text/uri-list U:content://io.github.etc51.skaner.files/export/%D0%A1%D0%BA%D0%B0%D0%BD%2019%20%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2014-01.pdf} (has extras)} from uid 10078 on display 0
+10-19 14:03:20.605  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:03:35.971  1645  3041 I ActivityManager: START u0 {act=android.intent.action.CHOOSER flg=0x1 cmp=android/com.android.internal.app.ChooserActivity clip={text/uri-list U:content://io.github.etc51.skaner.files/export/%D0%A1%D0%BA%D0%B0%D0%BD%2019%20%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2014-01-1.jpg ...} (has extras)} from uid 10078 on display 0
+10-19 14:03:36.005  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:03:52.246  4306  5402 W DocumentsActivity: Failed to restore stack for package: io.github.etc51.skaner because of error: java.io.FileNotFoundException: Failed to find matching root for null
+10-19 14:03:52.257  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:03:52.494  1645  3041 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.WindowManagerService.tryStartExitingAnimation:3024 com.android.server.wm.WindowManagerService.relayoutWindow:2904 com.android.server.wm.Session.relayout:224 android.view.IWindowSession$Stub.onTransact:286 com.android.server.wm.Session.onTransact:145 
+10-19 14:04:07.277  1645  2114 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:04:11.641  1645  4008 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:04:39.790  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:04:48.872  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
+10-19 14:04:54.419  1645  4010 W ActivityManager: Invalid packageName: io.github.etc51.skaner
+10-19 14:04:56.825  1645  1657 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity} from uid 2000 on display 0
+10-19 14:05:02.495  1645  2145 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:05:08.108  1645  4008 I ActivityManager: START u0 {act=android.media.action.IMAGE_CAPTURE flg=0x3 cmp=com.android.camera2/com.android.camera.CaptureActivity clip={text/uri-list U:content://io.github.etc51.skaner.files/camera/shot.jpg} (has extras)} from uid 10078 on display 0
+10-19 14:05:08.873  1645  4007 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.AppWindowToken.notifyAppStopped:389 com.android.server.wm.WindowManagerService.notifyAppStopped:4463 com.android.server.am.ActivityStack.activityStoppedLocked:1252 com.android.server.am.ActivityManagerService.activityStopped:6903 
+10-19 14:05:24.672  6402  6402 D AndroidRuntime: Shutting down VM
+10-19 14:05:24.887  6416  6416 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:24.888  6416  6416 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:24.920  6416  6416 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:25.940  6416  6416 D AndroidRuntime: Shutting down VM
+10-19 14:05:27.151  6431  6431 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:27.152  6431  6431 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:27.183  6431  6431 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:28.205  6431  6431 D AndroidRuntime: Shutting down VM
+10-19 14:05:29.409  6446  6446 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:29.410  6446  6446 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:29.441  6446  6446 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:30.472  6446  6446 D AndroidRuntime: Shutting down VM
+10-19 14:05:31.685  6460  6460 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:31.686  6460  6460 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:31.717  6460  6460 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:32.739  6460  6460 D AndroidRuntime: Shutting down VM
+10-19 14:05:33.944  6474  6474 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:33.945  6474  6474 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:33.977  6474  6474 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:35.006  6474  6474 D AndroidRuntime: Shutting down VM
+10-19 14:05:36.217  6489  6489 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:36.218  6489  6489 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:36.250  6489  6489 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:37.272  6489  6489 D AndroidRuntime: Shutting down VM
+10-19 14:05:38.485  6503  6503 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:38.486  6503  6503 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:38.518  6503  6503 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:39.539  6503  6503 D AndroidRuntime: Shutting down VM
+10-19 14:05:40.752  6517  6517 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:40.753  6517  6517 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:40.785  6517  6517 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:41.805  6517  6517 D AndroidRuntime: Shutting down VM
+10-19 14:05:42.977  6531  6531 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:42.977  6531  6531 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:43.009  6531  6531 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:44.039  6531  6531 D AndroidRuntime: Shutting down VM
+10-19 14:05:45.245  6545  6545 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:45.246  6545  6545 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:45.279  6545  6545 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:46.305  6545  6545 D AndroidRuntime: Shutting down VM
+10-19 14:05:47.521  6559  6559 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:47.522  6559  6559 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:47.553  6559  6559 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:48.572  6559  6559 D AndroidRuntime: Shutting down VM
+10-19 14:05:49.774  6573  6573 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:49.775  6573  6573 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:49.806  6573  6573 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:50.839  6573  6573 D AndroidRuntime: Shutting down VM
+10-19 14:05:52.052  6587  6587 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:52.053  6587  6587 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:52.084  6587  6587 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:53.105  6587  6587 D AndroidRuntime: Shutting down VM
+10-19 14:05:54.313  6601  6601 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:54.313  6601  6601 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:54.344  6601  6601 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:55.372  6601  6601 D AndroidRuntime: Shutting down VM
+10-19 14:05:56.576  6616  6616 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:56.577  6616  6616 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:56.607  6616  6616 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:57.622  6616  6616 D AndroidRuntime: Shutting down VM
+10-19 14:05:58.825  6630  6630 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:05:58.826  6630  6630 D AndroidRuntime: CheckJNI is OFF
+10-19 14:05:58.858  6630  6630 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:05:59.889  6630  6630 D AndroidRuntime: Shutting down VM
+10-19 14:06:01.096  6644  6644 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:01.096  6644  6644 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:01.128  6644  6644 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:02.155  6644  6644 D AndroidRuntime: Shutting down VM
+10-19 14:06:03.359  6658  6658 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:03.360  6658  6658 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:03.391  6658  6658 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:04.422  6658  6658 D AndroidRuntime: Shutting down VM
+10-19 14:06:05.635  6672  6672 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:05.636  6672  6672 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:05.669  6672  6672 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:06.689  6672  6672 D AndroidRuntime: Shutting down VM
+10-19 14:06:07.899  6687  6687 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:07.900  6687  6687 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:07.933  6687  6687 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:08.955  6687  6687 D AndroidRuntime: Shutting down VM
+10-19 14:06:10.165  6701  6701 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:10.166  6701  6701 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:10.197  6701  6701 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:11.239  6701  6701 D AndroidRuntime: Shutting down VM
+10-19 14:06:12.442  6715  6715 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:12.443  6715  6715 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:12.473  6715  6715 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:13.505  6715  6715 D AndroidRuntime: Shutting down VM
+10-19 14:06:14.716  6729  6729 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:14.717  6729  6729 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:14.748  6729  6729 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:15.772  6729  6729 D AndroidRuntime: Shutting down VM
+10-19 14:06:16.976  6743  6743 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:16.977  6743  6743 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:17.007  6743  6743 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:18.039  6743  6743 D AndroidRuntime: Shutting down VM
+10-19 14:06:19.246  6757  6757 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:19.247  6757  6757 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:19.278  6757  6757 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:20.306  6757  6757 D AndroidRuntime: Shutting down VM
+10-19 14:06:21.519  6771  6771 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:21.520  6771  6771 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:21.550  6771  6771 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:22.572  6771  6771 D AndroidRuntime: Shutting down VM
+10-19 14:06:23.776  6785  6785 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:23.776  6785  6785 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:23.808  6785  6785 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:24.840  6785  6785 D AndroidRuntime: Shutting down VM
+10-19 14:06:26.055  6799  6799 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:26.056  6799  6799 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:26.087  6799  6799 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:27.105  6799  6799 D AndroidRuntime: Shutting down VM
+10-19 14:06:28.314  6813  6813 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:28.315  6813  6813 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:28.345  6813  6813 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:29.372  6813  6813 D AndroidRuntime: Shutting down VM
+10-19 14:06:30.576  6827  6827 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:30.577  6827  6827 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:30.608  6827  6827 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:31.639  6827  6827 D AndroidRuntime: Shutting down VM
+10-19 14:06:32.999  6847  6847 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:33.000  6847  6847 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:33.028  6847  6847 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+10-19 14:06:33.124  6847  6847 D AndroidRuntime: Shutting down VM
+10-19 14:06:41.255  6863  6863 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:41.256  6863  6863 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:41.282  6863  6863 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+10-19 14:06:41.285  1645  4010 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:06:41.307  6863  6863 D AndroidRuntime: Shutting down VM
+10-19 14:06:44.440  6876  6876 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:44.441  6876  6876 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:44.472  6876  6876 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:45.490  6876  6876 D AndroidRuntime: Shutting down VM
+10-19 14:06:45.653  6888  6888 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:45.654  6888  6888 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:45.681  6888  6888 D AndroidRuntime: Calling main entry com.android.commands.input.Input
+10-19 14:06:45.686  6888  6888 D AndroidRuntime: Shutting down VM
+10-19 14:06:49.818  6901  6901 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:49.819  6901  6901 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:49.848  6901  6901 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+10-19 14:06:49.851  1645  4007 I ActivityManager: START u0 {flg=0x10000000 cmp=io.github.etc51.skaner/ru.skaner.ui.MainActivity (has extras)} from uid 2000 on display 0
+10-19 14:06:49.853  6901  6901 D AndroidRuntime: Shutting down VM
+10-19 14:06:52.991  6913  6913 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:52.992  6913  6913 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:53.025  6913  6913 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:54.044  6913  6913 D AndroidRuntime: Shutting down VM
+10-19 14:06:54.216  6925  6925 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:54.217  6925  6925 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:54.244  6925  6925 D AndroidRuntime: Calling main entry com.android.commands.input.Input
+10-19 14:06:55.456  6925  6925 D AndroidRuntime: Shutting down VM
+10-19 14:06:57.584  6939  6939 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:57.585  6939  6939 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:57.617  6939  6939 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:06:58.635  6939  6939 D AndroidRuntime: Shutting down VM
+10-19 14:06:58.841  6952  6952 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:06:58.842  6952  6952 D AndroidRuntime: CheckJNI is OFF
+10-19 14:06:58.869  6952  6952 D AndroidRuntime: Calling main entry com.android.commands.input.Input
+10-19 14:06:58.879  6952  6952 D AndroidRuntime: Shutting down VM
+10-19 14:07:01.006  6966  6966 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:07:01.007  6966  6966 D AndroidRuntime: CheckJNI is OFF
+10-19 14:07:01.038  6966  6966 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-19 14:07:02.072  6966  6966 D AndroidRuntime: Shutting down VM
+10-19 14:07:02.275  6978  6978 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-19 14:07:02.276  6978  6978 D AndroidRuntime: CheckJNI is OFF
+10-19 14:07:02.305  6978  6978 D AndroidRuntime: Calling main entry com.android.commands.input.Input
+10-19 14:07:02.311  6978  6978 D AndroidRuntime: Shutting down VM
+10-19 14:07:02.375  1645  1666 I WindowManager: Destroying surface Surface(name=io.github.etc51.skaner/ru.skaner.ui.MainActivity) called by com.android.server.wm.WindowStateAnimator.destroySurface:2016 com.android.server.wm.WindowStateAnimator.destroySurfaceLocked:882 com.android.server.wm.WindowState.destroyOrSaveSurface:2100 com.android.server.wm.AppWindowToken.destroySurfaces:363 com.android.server.wm.WindowStateAnimator.finishExit:565 com.android.server.wm.WindowStateAnimator.stepAnimationLocked:491 com.android.server.wm.WindowAnimator.updateWindowsLocked:303 com.android.server.wm.WindowAnimator.animateLocked:704 
