@@ -1,0 +1,29 @@
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: FATAL EXCEPTION: main
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: Process: com.android.camera2, PID: 9930
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.android.camera2/com.android.camera.CaptureActivity}: java.lang.NullPointerException
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3270)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3409)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:83)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2016)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:214)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7356)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:492)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:930)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: Caused by: java.lang.NullPointerException
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at java.util.Hashtable.put(Hashtable.java:461)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.one.v2.Camera2OneCameraManagerImpl.findCameraId(Camera2OneCameraManagerImpl.java:148)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.one.v2.Camera2OneCameraManagerImpl.findFirstCameraFacing(Camera2OneCameraManagerImpl.java:114)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.one.v2.Camera2OneCameraManagerImpl.<init>(Camera2OneCameraManagerImpl.java:78)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.one.v2.Camera2OneCameraManagerImpl.create(Camera2OneCameraManagerImpl.java:61)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.one.OneCameraModule.provideOneCameraManager(OneCameraModule.java:68)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.CameraActivity.onCreateTasks(CameraActivity.java:1473)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at com.android.camera.util.QuickActivity.onCreate(QuickActivity.java:114)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:7802)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:7791)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1299)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3245)
+10-19 14:13:10.378  9930  9930 E AndroidRuntime: 	... 11 more
