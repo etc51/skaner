@@ -24,6 +24,8 @@ class DemoDataReceiver : BroadcastReceiver() {
                     "ru.skaner.debug.SEED" -> seed(context)
                     "ru.skaner.debug.NEW" -> addNew(context)
                     "ru.skaner.debug.CLEAR" -> clear(context)
+                    // Запасной путь для автопроверки, если системное окно выбора фото не удалось пройти.
+                    "ru.skaner.debug.IMPORT" -> importFile(context, intent.getStringExtra("path")!!)
                 }
             } finally {
                 pending.finish()
@@ -54,6 +56,17 @@ class DemoDataReceiver : BroadcastReceiver() {
         val page = Scanner.importPage(context, demoUri(context, 1), "new")
         val now = System.currentTimeMillis()
         docs.save(Doc("new", "Новый скан", now, now, listOf(page)))
+    }
+
+    private fun importFile(context: Context, path: String) {
+        val docs = Docs.get(context)
+        val f = File(context.cacheDir, "import.jpg")
+        File(path).copyTo(f, overwrite = true)
+        val page = Scanner.importPage(context, Uri.fromFile(f), "imported")
+        Scanner.render(context, "imported", page)
+        val now = System.currentTimeMillis()
+        docs.save(Doc("imported", "Imported", now, now, listOf(page)))
+        Scanner.render(context, "imported", page)
     }
 
     private fun make(context: Context, id: String, name: String, time: Long, photos: List<Int>, filter: Filter) {
