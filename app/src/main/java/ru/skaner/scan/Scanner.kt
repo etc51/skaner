@@ -144,11 +144,12 @@ object Scanner {
     fun exportJpgs(context: Context, doc: Doc): List<File> {
         val docs = Docs.get(context)
         val base = fileName(doc.name)
+        val dir = exportDir(context)
         return doc.pages.mapIndexed { i, p ->
             val f = docs.pageFile(doc.id, p.id)
             if (!f.exists()) render(context, doc.id, p)
             val name = if (doc.pages.size == 1) "$base.jpg" else "$base-${i + 1}.jpg"
-            f.copyTo(File(exportDir(context), name), overwrite = true)
+            f.copyTo(File(dir, name), overwrite = true)
         }
     }
 

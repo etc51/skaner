@@ -57,7 +57,7 @@ in_app() { adb shell dumpsys window | grep -E "mCurrentFocus|mFocusedApp" | grep
 crashes() { adb logcat -d -b crash | grep -c "Process: $PKG" || true; }
 # Файлы приложения: только отладочная сборка разрешает run-as.
 app_ls() { adb shell run-as $PKG sh -c "'ls $1'" 2>/dev/null | tr -d '\r'; }
-app_pull() { adb shell run-as $PKG cat "$1" > "$2" 2>/dev/null; }
+app_pull() { adb exec-out run-as $PKG sh -c "'cat \"$1\"'" > "$2" 2>/dev/null; }
 
 read -r W H < <(adb shell wm size | grep -o '[0-9]*x[0-9]*' | tail -1 | tr 'x' ' ')
 API=$(adb shell getprop ro.build.version.sdk | tr -d '\r')
@@ -77,12 +77,13 @@ for f in .github/test-photos/*.jpg; do adb push "$f" /sdcard/Pictures/ >/dev/nul
 adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/list1.jpg >/dev/null 2>&1
 adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/list2.jpg >/dev/null 2>&1
 adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/bokom-exif.jpg >/dev/null 2>&1
+adb shell content call --uri content://media --method scan_volume --arg external_primary >/dev/null 2>&1 || true
 adb shell content call --method scan_volume --uri content://media --arg external_primary >/dev/null 2>&1 || true
 sleep 3
 
 # Выбрать в системном окне одно фото с именем $1 (или первое). Разные версии Android показывают разные окна.
 pick_photo() {
-  local want="$1"
+  local want="$1" searched=""
   sleep 3
   for attempt in 1 2 3 4 5 6; do
     dismiss_anr
@@ -99,12 +100,19 @@ pick_photo() {
     if [ -n "$(find_xy textin "$want")" ]; then
       xy=$(find_xy textin "$want"); adb shell input tap $xy; sleep 3
       in_app && return 0
+      # Android 7: короткое нажатие в режиме нескольких файлов ничего не делает, отмечаем долгим нажатием.
+      adb shell input swipe $xy $xy 1200; sleep 2
       dump; cp /tmp/ui.xml "$OUT/picker-after-tap.xml"
       # В режиме выбора нескольких файлов нажатие только отмечает файл, дальше нужна кнопка «Выбрать».
       tap textin "Select" 3 || tap desc "Select" 3 || tap id "action_menu_select" 3 || tap textin "Open" 3 || tap desc "Open" 3 || tap textin "Done" 3 || true
       return 0
     fi
-    # «Недавние» бывают пустыми: открываем боковое меню, раздел «Изображения», папку Pictures.
+    # «Недавние» пустые (Android 10 не индексирует push по broadcast): ищем файл поиском окна «Файлы».
+    if has_text "No items" && [ -z "$searched" ]; then
+      searched=1
+      tap desc "Search" 3 && { adb shell input text "$want"; adb shell input keyevent 66; sleep 4; continue; }
+    fi
+    # Иначе открываем боковое меню, раздел «Изображения», папку Pictures.
     tap textin "Pictures" 3 || tap text "Images" 3 || tap desc "Show roots" 3 || tap desc "Navigate up" 3 || sleep 2
   done
   return 1
@@ -198,7 +206,7 @@ shot share-pdf
 if in_app; then fail "окно «Поделиться» не открылось"; else ok "открылось системное окно «Поделиться»"; fi
 adb shell input keyevent 4; sleep 2
 if [ $DEBUG = 1 ]; then
-  PDF=$(app_ls cache/export | grep '\.pdf$' | head -1)
+  PDF=$(app_ls cache/export | grep '\.pdf$' | head -1)  # имя с пробелами, app_pull берёт его в кавычки
   if [ -n "$PDF" ]; then
     app_pull "cache/export/$PDF" "$OUT/document.pdf"
     python3 - "$OUT/document.pdf" <<'PY' >> "$OUT/result.txt"
